@@ -174,7 +174,7 @@ export const i18n = new I18nStore({
     'pricing.collector.feat2': 'Próximo módulo Music Editor',
     'pricing.collector.feat3': 'Futuros módulos de la Suite',
     'pricing.collector.feat4': 'Optimización de exportación C++',
-    'pricing.collector.feat5': 'Funciona en Windows, Mac y Linux',
+    'pricing.collector.feat5': 'Funciona en Windows, macOS y Linux',
     'pricing.collector.feat6': 'Actualizaciones gratuitas de por vida',
     'pricing.collector.feat7': '¡Compra única, tuya para siempre!',
     'pricing.collector.cta': 'Avísame',
