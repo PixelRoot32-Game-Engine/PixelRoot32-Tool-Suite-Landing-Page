@@ -1,4 +1,5 @@
 import { i18n } from '../i18n';
+import { Button } from 'pixelroot32-components-landing-page';
 
 export function Hero(): string {
   return `<main class="pt-32 pb-16 lg:pt-48 lg:pb-32 relative overflow-hidden">
@@ -16,9 +17,11 @@ export function Hero(): string {
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-      <button class="open-waitlist-btn w-full sm:w-auto px-8 py-4 bg-primary text-black font-mono font-black text-lg shadow-block hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all uppercase">
-        ${i18n.t('hero.cta.download')}
-      </button>
+      ${Button({
+        label: i18n.t('hero.cta.download'),
+        variant: 'primary',
+        className: 'open-waitlist-btn w-full sm:w-auto px-8 py-4 text-lg'
+      })}
     </div>
 
     <div class="relative max-w-5xl mx-auto">

@@ -1,5 +1,5 @@
 import { i18n } from '../i18n';
-import { Navigation as SharedNavigation } from 'pixelroot32-components-landing-page';
+import { Navigation as SharedNavigation, initNavigation as initSharedNavigation } from 'pixelroot32-components-landing-page';
 
 export function Navigation(): string {
   return SharedNavigation({
@@ -16,3 +16,5 @@ export function Navigation(): string {
     i18n: i18n
   });
 }
+
+export const initNavigation = initSharedNavigation;

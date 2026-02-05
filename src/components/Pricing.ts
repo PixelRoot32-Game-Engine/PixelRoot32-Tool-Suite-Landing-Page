@@ -1,4 +1,5 @@
 import { i18n } from '../i18n';
+import { Button } from 'pixelroot32-components-landing-page';
 
 export const Pricing = () => {
   return `
@@ -92,9 +93,11 @@ export const Pricing = () => {
               </div>
 
               <div class="w-full mt-auto">
-                <button class="open-waitlist-btn w-full py-5 bg-primary text-black font-mono font-black text-xl shadow-block hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all uppercase">
-                   📦 ${i18n.t('pricing.collector.cta')}
-                </button>
+                ${Button({
+                  label: `📦 ${i18n.t('pricing.collector.cta')}`,
+                  variant: 'primary',
+                  className: 'open-waitlist-btn w-full py-5 text-xl'
+                })}
               </div>
                     </div>
                   </div>
