@@ -5,25 +5,25 @@ export function Showcase(): string {
     {
       title: i18n.t('showcase.editor.title'),
       description: i18n.t('showcase.editor.description'),
-      image: '/assets/main-canvas-section.webp',
+      image: 'assets/main-canvas-section.webp',
       color: 'primary'
     },
     {
       title: i18n.t('showcase.scenes.title'),
       description: i18n.t('showcase.scenes.description'),
-      image: '/assets/scenes-section.webp',
+      image: 'assets/scenes-section.webp',
       color: 'secondary'
     },
     {
       title: i18n.t('showcase.layers.title'),
       description: i18n.t('showcase.layers.description'),
-      image: '/assets/layers-section.webp',
+      image: 'assets/layers-section.webp',
       color: 'retro'
     },
     {
       title: i18n.t('showcase.export.title'),
       description: i18n.t('showcase.export.description'),
-      image: '/assets/export-settings.webp',
+      image: 'assets/export-settings.webp',
       color: 'primary'
     }
   ];

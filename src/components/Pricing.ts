@@ -37,7 +37,7 @@ export const Pricing = () => {
               <!-- Tool Suite Image -->
               <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-10 flex items-center justify-center overflow-hidden group relative">
                 <img 
-                  src="/assets/tilemap-editor.webp" 
+                  src="assets/tilemap-editor.webp" 
                   alt="PixelRoot32 Tilemap Editor" 
                   class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 >
