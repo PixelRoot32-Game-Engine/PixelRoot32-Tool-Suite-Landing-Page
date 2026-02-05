@@ -1,5 +1,8 @@
 import './style.css'
-import { Navigation, Hero, Features, Showcase, Specs, Footer, initLanguageSwitcher } from './components';
+import { 
+  Navigation, Hero, Features, Showcase, Specs, Pricing, WaitlistModal, 
+  Footer, initLanguageSwitcher, initWaitlistModal 
+} from './components';
 
 /**
  * Main Application Entry Point
@@ -14,10 +17,11 @@ function renderApp(): void {
   }
 
   // Render all components in order
-  app.innerHTML = Navigation() + Hero() + Features() + Showcase() + Specs() + Footer();
+  app.innerHTML = Navigation() + Hero() + Features() + Showcase() + Specs() + Pricing() + Footer() + WaitlistModal();
   
-  // Initialize language switcher functionality
+  // Initialize functionalities
   initLanguageSwitcher();
+  initWaitlistModal();
 
   console.log('PixelRoot32 Tilemap Editor Landing Page Rendered');
 }

@@ -3,5 +3,7 @@ export * from './Hero';
 export * from './Features';
 export * from './Showcase';
 export * from './Specs';
+export * from './Pricing';
+export * from './WaitlistModal';
 export * from './Footer';
 export * from './LanguageSwitcher';

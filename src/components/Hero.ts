@@ -7,14 +7,6 @@ export function Hero(): string {
   </div>
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-xs font-mono mb-8">
-      <span class="relative flex h-2 w-2">
-        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-        <span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
-      </span>
-      <span id="hero-version">${i18n.t('hero.version')}</span>
-    </div>
-    
     <h1 class="text-5xl lg:text-7xl font-black mb-6 tracking-tight leading-tight">
       ${i18n.t('hero.title')}
     </h1>
@@ -24,9 +16,9 @@ export function Hero(): string {
     </p>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-      <div class="w-full sm:w-auto px-8 py-4 bg-primary/50 text-black/50 font-mono font-black text-lg shadow-block cursor-not-allowed">
+      <button class="open-waitlist-btn w-full sm:w-auto px-8 py-4 bg-primary text-black font-mono font-black text-lg shadow-block hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all uppercase">
         ${i18n.t('hero.cta.download')}
-      </div>
+      </button>
     </div>
 
     <div class="relative max-w-5xl mx-auto">

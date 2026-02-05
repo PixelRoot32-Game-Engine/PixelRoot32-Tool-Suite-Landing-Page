@@ -1,6 +1,6 @@
-# PixelRoot32 Tilemap Editor Landing Page
+# PixelRoot32 Tool Suite Landing Page
 
-Landing page for the PixelRoot32 Tilemap Editor, the native world-building tool for the PixelRoot32 ecosystem.
+Landing page for the PixelRoot32 Tool Suite, the definitive production suite for ESP32 and the PixelRoot32 ecosystem. Featuring the Tilemap Editor as its first module.
 
 ## 🚀 Quick Start
 
@@ -23,9 +23,8 @@ npm run preview
 ```
 ├── public/                     # Static assets
 │   ├── assets/                 # Feature screenshots & showcase images
-│   ├── pr32_logo.png           # Branding assets
-│   ├── pr32_logo_v2.png        # Alternative logo
-│   └── pr32_logo.ico           # Favicon
+│   ├── tool_suite_icon.png     # Branding assets (Square Icon)
+│   ├── tool_suite_logo.png     # Alternative logo (Horizontal Text)
 ├── src/
 │   ├── components/             # Modular UI components
 │   │   ├── Navigation.ts       # Top navigation bar
@@ -58,7 +57,7 @@ npm run preview
 - **Component-based architecture**: Modular and maintainable UI structure.
 - **Internationalization (i18n)**: Native support for English and Spanish.
 - **Responsive Design**: Fully optimized for mobile, tablet, and desktop.
-- **Brand Consistency**: Visual style aligned with the PixelRoot32 ecosystem.
+- **Brand Consistency**: Visual style aligned with the PixelRoot32 Tool Suite ecosystem.
 - **Dark Mode UI**: Professional aesthetic designed for creators.
 
 ### 🔧 Configuration
