@@ -24,6 +24,7 @@ npm run preview
 ├── public/                     # Static assets
 │   ├── assets/                 # Feature screenshots & showcase images
 │   ├── pr32_logo.png           # Branding assets
+│   ├── pr32_logo_v2.png        # Alternative logo
 │   └── pr32_logo.ico           # Favicon
 ├── src/
 │   ├── components/             # Modular UI components
@@ -48,6 +49,7 @@ npm run preview
 - **Tailwind CSS v4** - Modern styling with `@tailwindcss/vite`
 - **Vanilla JS** - Framework-less implementation for maximum performance
 - **Custom i18n** - Built-in English and Spanish support
+- **WebP Optimized** - Images served in .webp format for better performance
 
 ## 📊 Features
 

@@ -5,20 +5,26 @@ export function Showcase(): string {
     {
       title: i18n.t('showcase.editor.title'),
       description: i18n.t('showcase.editor.description'),
-      image: '/assets/main-canvas-section.png',
+      image: '/assets/main-canvas-section.webp',
       color: 'primary'
+    },
+    {
+      title: i18n.t('showcase.scenes.title'),
+      description: i18n.t('showcase.scenes.description'),
+      image: '/assets/scenes-section.webp',
+      color: 'secondary'
     },
     {
       title: i18n.t('showcase.layers.title'),
       description: i18n.t('showcase.layers.description'),
-      image: '/assets/layers-section.png',
-      color: 'secondary'
+      image: '/assets/layers-section.webp',
+      color: 'retro'
     },
     {
       title: i18n.t('showcase.export.title'),
       description: i18n.t('showcase.export.description'),
-      image: '/assets/export-settings.png',
-      color: 'retro'
+      image: '/assets/export-settings.webp',
+      color: 'primary'
     }
   ];
 
@@ -39,9 +45,9 @@ export function Showcase(): string {
             <h3 class="text-3xl font-black mb-4">${item.title}</h3>
             <p class="text-text-muted text-lg leading-relaxed mb-8">${item.description}</p>
           </div>
-          <div class="flex-1 w-full">
+          <div class="flex-1 w-full flex justify-center">
             <div class="bg-surface border-4 border-black shadow-block hover:shadow-block-hover transition-all">
-              <img src="${item.image}" alt="${item.title}" class="w-full h-auto">
+              <img src="${item.image}" alt="${item.title}" class="h-auto pixel-art">
             </div>
           </div>
         </div>

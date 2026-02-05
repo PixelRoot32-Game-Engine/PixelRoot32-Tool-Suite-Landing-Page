@@ -22,7 +22,7 @@ export function Specs(): string {
             <div class="w-12 h-12 flex-shrink-0 bg-primary/10 flex items-center justify-center">
               <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="${spec.icon}"></path></svg>
             </div>
-            <span class="font-mono font-bold text-lg">${spec.label}</span>
+            <span class="font-mono font-bold text-base">${spec.label}</span>
           </div>
         `).join('')}
       </div>

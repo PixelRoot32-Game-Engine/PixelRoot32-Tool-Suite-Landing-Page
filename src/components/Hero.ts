@@ -32,7 +32,7 @@ export function Hero(): string {
     <div class="relative max-w-5xl mx-auto">
       <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-retro opacity-20 blur-xl"></div>
       <div class="relative bg-surface border-4 border-black shadow-block-hover-lg">
-        <img src="/assets/tilemap-editor.png" alt="PixelRoot32 Tilemap Editor" class="w-full h-auto">
+        <img src="/assets/tilemap-editor.webp" alt="PixelRoot32 Tilemap Editor" class="h-auto pixel-art">
       </div>
     </div>
   </div>

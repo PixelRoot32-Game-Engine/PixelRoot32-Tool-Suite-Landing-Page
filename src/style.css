@@ -44,6 +44,11 @@
       linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
     background-size: 40px 40px;
   }
+
+  .pixel-art { 
+    image-rendering: pixelated; 
+    image-rendering: crisp-edges; 
+  }
 }
 
 @layer base {
