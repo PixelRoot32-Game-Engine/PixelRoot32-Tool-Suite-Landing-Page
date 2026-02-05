@@ -24,7 +24,7 @@ npm run preview
 
 ## 📁 Project Structure
 
-```
+```text
 ├── public/                     # Static assets
 │   ├── assets/                 # Feature screenshots & showcase images
 │   ├── tool_suite_icon.png     # Branding assets (Square Icon)
