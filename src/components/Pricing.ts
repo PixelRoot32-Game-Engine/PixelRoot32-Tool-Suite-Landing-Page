@@ -6,7 +6,7 @@ export const Pricing = () => {
       <div class="container mx-auto px-4 relative z-10">
         <div class="text-center mb-16">
           <h2 class="text-4xl md:text-5xl font-mono font-black mb-4 uppercase tracking-tighter">
-            ${i18n.t('pricing.title')}
+            <span class="text-primary">${i18n.t('pricing.title')}</span>
           </h2>
           <p class="text-text-muted max-w-2xl mx-auto font-mono">
             ${i18n.t('pricing.subtitle')}
