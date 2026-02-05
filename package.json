@@ -1,7 +1,7 @@
 {
   "name": "pixelroot32-tool-suite-landing",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,6 +10,7 @@
     "check-links": "node scripts/check-links.js"
   },
   "devDependencies": {
+    "pixelroot32-components-landing-page": "git+https://github.com/PixelRoot32-Game-Engine/PixelRoot32-Components-Landing-Page.git#v1.0.0",
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "typescript": "~5.9.3",

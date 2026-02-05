@@ -8,6 +8,10 @@ Landing page for the PixelRoot32 Tool Suite, the definitive production suite for
 # Install dependencies
 npm install
 
+# (Optional) Link shared components library for local development
+# Make sure to run 'npm link' in the components directory first
+npm link pixelroot32-components-landing-page
+
 # Start development server
 npm run dev
 
@@ -20,7 +24,7 @@ npm run preview
 
 ## 📁 Project Structure
 
-```
+```text
 ├── public/                     # Static assets
 │   ├── assets/                 # Feature screenshots & showcase images
 │   ├── tool_suite_icon.png     # Branding assets (Square Icon)
