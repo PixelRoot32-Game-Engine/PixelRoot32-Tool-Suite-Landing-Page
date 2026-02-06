@@ -84,18 +84,18 @@ export const WaitlistModal = () => {
   `;
 };
 
-export const initWaitlistModal = () => {
-  const modal = document.getElementById('waitlist-modal');
-  const openBtns = document.querySelectorAll('.open-waitlist-btn');
-  const closeBtn = document.getElementById('close-modal-btn');
-  const successCloseBtn = document.getElementById('success-close-btn');
-  const form = document.getElementById('waitlist-form') as HTMLFormElement;
-  const formContainer = document.getElementById('waitlist-form-container');
-  const successMsg = document.getElementById('waitlist-success-msg');
-  const submitBtn = document.getElementById('waitlist-submit-btn') as HTMLButtonElement;
-  const submitText = document.getElementById('submit-text');
-  const submitLoading = document.getElementById('submit-loading');
-  const errorMsg = document.getElementById('waitlist-error');
+export const initWaitlistModal = (container: HTMLElement = document.body) => {
+  const modal = container.querySelector('#waitlist-modal');
+  const openBtns = container.querySelectorAll('.open-waitlist-btn');
+  const closeBtn = container.querySelector('#close-modal-btn');
+  const successCloseBtn = container.querySelector('#success-close-btn');
+  const form = container.querySelector('#waitlist-form') as HTMLFormElement;
+  const formContainer = container.querySelector('#waitlist-form-container');
+  const successMsg = container.querySelector('#waitlist-success-msg');
+  const submitBtn = container.querySelector('#waitlist-submit-btn') as HTMLButtonElement;
+  const submitText = container.querySelector('#submit-text');
+  const submitLoading = container.querySelector('#submit-loading');
+  const errorMsg = container.querySelector('#waitlist-error');
 
   const openModal = () => {
     modal?.classList.remove('hidden');
@@ -131,8 +131,10 @@ export const initWaitlistModal = () => {
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = (document.getElementById('waitlist-email') as HTMLInputElement).value;
-    const isEarlyAccess = (document.getElementById('early-access-check') as HTMLInputElement).checked;
+    const emailInput = container.querySelector('#waitlist-email') as HTMLInputElement;
+    const earlyAccessInput = container.querySelector('#early-access-check') as HTMLInputElement;
+    const email = emailInput.value;
+    const isEarlyAccess = earlyAccessInput.checked;
     
     // Set loading state
     if (submitBtn) submitBtn.disabled = true;

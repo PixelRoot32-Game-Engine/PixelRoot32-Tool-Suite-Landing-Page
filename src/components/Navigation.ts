@@ -3,7 +3,7 @@ import { Navigation as SharedNavigation, initNavigation as initSharedNavigation 
 
 export function Navigation(): string {
   return SharedNavigation({
-    logoUrl: './tool_suite_icon.png',
+    logoUrl: '/logo.png',
     logoAlt: 'PixelRoot32 Logo',
     title: 'PIXELROOT32',
     subtitle: 'Tool Suite',

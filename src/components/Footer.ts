@@ -3,7 +3,7 @@ import { Footer as SharedFooter } from 'pixelroot32-components-landing-page';
 
 export function Footer(): string {
   return SharedFooter({
-    logoUrl: '/tool_suite_logo.png',
+    logoUrl: '/logo_v2.png',
     logoAlt: 'PixelRoot32 Logo',
     title: 'PIXELROOT32',
     subtitle: 'Tool Suite',
