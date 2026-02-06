@@ -5,6 +5,17 @@ import {
 } from './components';
 
 /**
+ * Helper to create an element from an HTML string safely
+ */
+function appendComponent(container: HTMLElement, html: string): void {
+  const temp = document.createElement('div');
+  temp.innerHTML = html.trim();
+  while (temp.firstChild) {
+    container.appendChild(temp.firstChild);
+  }
+}
+
+/**
  * Main Application Entry Point
  * Renders all components into the #app container
  */
@@ -16,13 +27,27 @@ function renderApp(): void {
     return;
   }
 
+  // Clear container
+  app.innerHTML = '';
+
   // Render all components in order
-  app.innerHTML = Navigation() + Hero() + Features() + Showcase() + Specs() + Pricing() + Footer() + WaitlistModal();
+  const components = [
+    Navigation(), 
+    Hero(), 
+    Features(), 
+    Showcase(), 
+    Specs(), 
+    Pricing(), 
+    Footer(), 
+    WaitlistModal()
+  ];
+
+  components.forEach(html => appendComponent(app, html));
   
   // Initialize functionalities
-  initNavigation();
-  initLanguageSwitcher();
-  initWaitlistModal();
+  initNavigation(app);
+  initLanguageSwitcher(app);
+  initWaitlistModal(app);
 
   console.log('PixelRoot32 Tool Suite Landing Page Rendered');
 }
