@@ -1,82 +1,10 @@
 @import "tailwindcss";
-
-@theme {
-  /* Base colors matching logo */
-  --color-black: #000000;
-  --color-background: #0d1117;
-  --color-surface: #161b22;
-  
-  /* Logo primary colors */
-  --color-primary: #FF4500;        /* Red/Orange from "32" in logo */
-  --color-secondary: #FFD700;      /* Golden yellow from "GAME ENGINE" in logo */
-  --color-retro: #FF8C00;         /* Orange accent */
-  
-  /* Text colors */
-  --color-text-high: #E6EDF3;
-  --color-text-muted: #8b949e;
-  --color-text-on-primary: #000000;  /* Black text on primary/secondary/retro backgrounds */
-  
-  /* UI colors */
-  --color-border-ui: #30363d;
-  --color-grid: #80808012;         /* Grid pattern color for hero background */
-  
-  /* Typography */
-  --font-sans: "Inter", "Geist", sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
-}
+@import "pixelroot32-components-landing-page/src/theme/tailwind.css";
+@source "../node_modules/pixelroot32-components-landing-page/src/**/*.ts";
 
 @layer utilities {
-  .shadow-block {
-    box-shadow: 4px 4px 0px var(--color-black);
-  }
-  
-  .shadow-block-hover {
-    box-shadow: 6px 6px 0px var(--color-black);
-  }
-  
-  .shadow-block-hover-lg {
-    box-shadow: 8px 8px 0px var(--color-black);
-  }
-  
-  .bg-grid-pattern {
-    background-image: 
-      linear-gradient(to right, var(--color-grid) 1px, transparent 1px),
-      linear-gradient(to bottom, var(--color-grid) 1px, transparent 1px);
-    background-size: 40px 40px;
-  }
-
   .pixel-art { 
     image-rendering: pixelated; 
     image-rendering: crisp-edges; 
-  }
-}
-
-@layer base {
-  * {
-    border-color: var(--color-border-ui);
-  }
-  
-  body {
-    background-color: var(--color-background);
-    color: var(--color-text-high);
-    font-family: var(--font-sans);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .bg-primary {
-    color: var(--color-text-on-primary);
-  }
-  
-  .bg-secondary {
-    color: var(--color-text-on-primary);
-  }
-  
-  .bg-retro {
-    color: var(--color-text-on-primary);
-  }
-  
-  .text-black {
-    color: var(--color-text-on-primary);
   }
 }

@@ -9,8 +9,12 @@
 
     /* Bundler mode */
     "moduleResolution": "bundler",
+    "paths": {
+      "pixelroot32-components-landing-page": ["./node_modules/pixelroot32-components-landing-page/src/index.ts"]
+    },
+    "preserveSymlinks": true,
     "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "moduleDetection": "force",
     "noEmit": true,
 

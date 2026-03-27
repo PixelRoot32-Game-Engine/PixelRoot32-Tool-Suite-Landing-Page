@@ -1,5 +1,6 @@
 import { i18n } from '../i18n';
 import { subscribeToNewsletter } from '../services/subscription';
+import { Button } from 'pixelroot32-components-landing-page';
 
 export const WaitlistModal = () => {
   return `
@@ -49,10 +50,12 @@ export const WaitlistModal = () => {
               </label>
               
               <div class="pt-2">
-                <button id="waitlist-submit-btn" type="submit" class="w-full py-4 bg-primary text-black font-mono font-black text-lg shadow-block hover:translate-x-[-2px] hover:translate-y-[-2px] hover:shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-all uppercase disabled:opacity-50 disabled:cursor-not-allowed">
-                  <span id="submit-text">${i18n.t('waitlist.submit')}</span>
-                  <span id="submit-loading" class="hidden">Connecting...</span>
-                </button>
+                ${Button({
+                  id: 'waitlist-submit-btn',
+                  label: `<span id="submit-text">${i18n.t('waitlist.submit')}</span><span id="submit-loading" class="hidden">Connecting...</span>`,
+                  variant: 'primary',
+                  className: 'w-full py-4 text-lg'
+                })}
                 <p class="text-[10px] text-center text-[#666666] font-mono mt-4 uppercase tracking-tighter">
                   ${i18n.t('waitlist.disclaimer')}
                 </p>
@@ -68,9 +71,12 @@ export const WaitlistModal = () => {
             <h3 class="text-white font-mono font-bold text-lg mb-4 uppercase tracking-tighter">
               ${i18n.t('waitlist.success')}
             </h3>
-            <button id="success-close-btn" class="mt-8 px-8 py-2 border-2 border-[#1a1a1a] text-text-muted font-mono text-sm hover:text-white hover:border-primary transition-all uppercase">
-              ${i18n.t('waitlist.close')}
-            </button>
+            ${Button({
+              id: 'success-close-btn',
+              label: i18n.t('waitlist.close'),
+              variant: 'outline',
+              className: 'mt-8 px-8 py-2 text-sm'
+            })}
           </div>
         </div>
       </div>
@@ -78,18 +84,18 @@ export const WaitlistModal = () => {
   `;
 };
 
-export const initWaitlistModal = () => {
-  const modal = document.getElementById('waitlist-modal');
-  const openBtns = document.querySelectorAll('.open-waitlist-btn');
-  const closeBtn = document.getElementById('close-modal-btn');
-  const successCloseBtn = document.getElementById('success-close-btn');
-  const form = document.getElementById('waitlist-form') as HTMLFormElement;
-  const formContainer = document.getElementById('waitlist-form-container');
-  const successMsg = document.getElementById('waitlist-success-msg');
-  const submitBtn = document.getElementById('waitlist-submit-btn') as HTMLButtonElement;
-  const submitText = document.getElementById('submit-text');
-  const submitLoading = document.getElementById('submit-loading');
-  const errorMsg = document.getElementById('waitlist-error');
+export const initWaitlistModal = (container: HTMLElement = document.body) => {
+  const modal = container.querySelector('#waitlist-modal');
+  const openBtns = container.querySelectorAll('.open-waitlist-btn');
+  const closeBtn = container.querySelector('#close-modal-btn');
+  const successCloseBtn = container.querySelector('#success-close-btn');
+  const form = container.querySelector('#waitlist-form') as HTMLFormElement;
+  const formContainer = container.querySelector('#waitlist-form-container');
+  const successMsg = container.querySelector('#waitlist-success-msg');
+  const submitBtn = container.querySelector('#waitlist-submit-btn') as HTMLButtonElement;
+  const submitText = container.querySelector('#submit-text');
+  const submitLoading = container.querySelector('#submit-loading');
+  const errorMsg = container.querySelector('#waitlist-error');
 
   const openModal = () => {
     modal?.classList.remove('hidden');
@@ -125,8 +131,10 @@ export const initWaitlistModal = () => {
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const email = (document.getElementById('waitlist-email') as HTMLInputElement).value;
-    const isEarlyAccess = (document.getElementById('early-access-check') as HTMLInputElement).checked;
+    const emailInput = container.querySelector('#waitlist-email') as HTMLInputElement;
+    const earlyAccessInput = container.querySelector('#early-access-check') as HTMLInputElement;
+    const email = emailInput.value;
+    const isEarlyAccess = earlyAccessInput.checked;
     
     // Set loading state
     if (submitBtn) submitBtn.disabled = true;
