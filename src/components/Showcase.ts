@@ -9,9 +9,9 @@ export function Showcase(): string {
       color: 'primary'
     },
     {
-      title: i18n.t('showcase.scenes.title'),
-      description: i18n.t('showcase.scenes.description'),
-      image: './assets/scenes-section.webp',
+      title: i18n.t('showcase.tileset.title'),
+      description: i18n.t('showcase.tileset.description'),
+      image: './assets/tileset-section.webp',
       color: 'secondary'
     },
     {
@@ -21,10 +21,22 @@ export function Showcase(): string {
       color: 'retro'
     },
     {
+      title: i18n.t('showcase.scenes.title'),
+      description: i18n.t('showcase.scenes.description'),
+      image: './assets/scenes-section.webp',
+      color: 'primary'
+    },
+    {
+      title: i18n.t('showcase.animation.title'),
+      description: i18n.t('showcase.animation.description'),
+      image: './assets/animation-panel.webp',
+      color: 'secondary'
+    },
+    {
       title: i18n.t('showcase.export.title'),
       description: i18n.t('showcase.export.description'),
       image: './assets/export-settings.webp',
-      color: 'primary'
+      color: 'retro'
     }
   ];
 
