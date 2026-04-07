@@ -1,4 +1,18 @@
 import { i18n } from '../i18n';
+import { Tabs } from './Tabs';
+
+const tilemapIcon = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>`;
+
+const musicIcon = `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>`;
+
+// Icons for specs
+const tileIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"></path></svg>`;
+
+const mapIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A2 2 0 013 15.483V8.517a2 2 0 011.553-1.793L9 4m0 16v-8m0 8l5.447-2.724A2 2 0 0021 15.483V8.517a2 2 0 00-1.553-1.793L15 4m0 16v-8m0-8l-5.447 2.724L9 4m6 0l-5.447 2.724L15 4"></path></svg>`;
+
+const layersIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v2M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2"></path></svg>`;
+
+const colorIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>`;
 
 type ModuleStatus = 'available' | 'coming-soon';
 type ColorVariant = 'primary' | 'secondary' | 'retro';
@@ -9,21 +23,23 @@ interface ModuleFeature {
   image: string;
 }
 
-interface Module {
+interface ModuleSpec {
+  labelKey: string;
+  icon: string;
+}
+
+interface ModuleTab {
   id: string;
   titleKey: string;
-  subtitleKey: string;
+  subtitleKey?: string;
   icon: string;
   color: ColorVariant;
   status: ModuleStatus;
   features: ModuleFeature[];
+  specs: ModuleSpec[];
 }
 
-const tilemapIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>`;
-
-const musicIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path></svg>`;
-
-const modules: Module[] = [
+const modules: ModuleTab[] = [
   {
     id: 'tilemap',
     titleKey: 'showcase.module.tilemap.title',
@@ -62,6 +78,12 @@ const modules: Module[] = [
         descriptionKey: 'showcase.export.description',
         image: './assets/export-settings.webp'
       }
+    ],
+    specs: [
+      { labelKey: 'specs.tile_size', icon: tileIcon },
+      { labelKey: 'specs.map_dim', icon: mapIcon },
+      { labelKey: 'specs.layers', icon: layersIcon },
+      { labelKey: 'specs.color', icon: colorIcon }
     ]
   },
   {
@@ -71,82 +93,20 @@ const modules: Module[] = [
     icon: musicIcon,
     color: 'secondary',
     status: 'coming-soon',
-    features: []
+    features: [],
+    specs: []
   }
 ];
 
-function renderModuleHeader(module: Module): string {
-  const statusBadge = module.status === 'coming-soon'
-    ? `<span class="inline-block px-3 py-1 bg-${module.color}/10 border border-${module.color}/20 text-${module.color} text-xs font-mono ml-3 uppercase">Coming Soon</span>`
-    : '';
-
-  return `
-    <div class="flex items-center gap-4 mb-8">
-      <div class="w-10 h-10 flex items-center justify-center bg-${module.color}/10 border border-${module.color}/20 text-${module.color}">
-        ${module.icon}
-      </div>
-      <div>
-        <h3 class="text-2xl font-black">${i18n.t(module.titleKey)}</h3>
-        <p class="text-text-muted text-sm">${i18n.t(module.subtitleKey)}${statusBadge}</p>
-      </div>
-    </div>
-  `;
-}
-
-function renderFeature(item: ModuleFeature, index: number, color: ColorVariant): string {
-  return `
-    <div class="flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12 lg:gap-24">
-      <div class="flex-1">
-        <div class="inline-block px-3 py-1 bg-${color}/10 border border-${color}/20 text-${color} text-xs font-mono mb-4 uppercase">
-          Tool Focus
-        </div>
-        <h4 class="text-3xl font-black mb-4">${i18n.t(item.titleKey)}</h4>
-        <p class="text-text-muted text-lg leading-relaxed mb-8">${i18n.t(item.descriptionKey)}</p>
-      </div>
-      <div class="flex-1 w-full flex justify-center">
-        <div class="bg-surface border-4 border-black shadow-block hover:shadow-block-hover transition-all">
-          <img src="${item.image}" alt="${i18n.t(item.titleKey)}" class="h-auto pixel-art">
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-function renderModule(module: Module): string {
-  if (module.status !== 'available' || module.features.length === 0) {
-    return `
-      <div class="py-12">
-        ${renderModuleHeader(module)}
-        <div class="text-center py-12 border-2 border-dashed border-border-ui rounded-lg">
-          <p class="text-text-muted">${i18n.t('showcase.module.coming_soon') || 'More features coming soon...'}</p>
-        </div>
-      </div>
-    `;
-  }
-
-  return `
-    <div class="py-8">
-      ${renderModuleHeader(module)}
-      <div class="space-y-16">
-        ${module.features.map((feature, index) => renderFeature(feature, index, module.color)).join('')}
-      </div>
-    </div>
-  `;
-}
-
 export function Showcase(): string {
-  const availableModules = modules.filter(m => m.status === 'available');
-
-  return `<section id="showcase" class="py-24">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl lg:text-5xl font-black mb-4 tracking-tight">${i18n.t('showcase.title')}</h2>
-      <p class="text-text-muted text-lg max-w-2xl mx-auto">${i18n.t('showcase.subtitle')}</p>
-    </div>
-
-    <div class="space-y-8">
-      ${availableModules.map(module => renderModule(module)).join('')}
-    </div>
-  </div>
-</section>`;
+  return Tabs({
+    tabs: modules,
+    defaultTabId: 'tilemap',
+    i18n,
+    translations: {
+      showcaseTitle: i18n.t('showcase.title'),
+      specsTitle: i18n.t('specs.title'),
+      comingSoon: i18n.t('showcase.module.coming_soon')
+    }
+  });
 }

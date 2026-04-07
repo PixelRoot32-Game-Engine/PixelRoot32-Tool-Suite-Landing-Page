@@ -2,7 +2,7 @@ export * from './Navigation';
 export * from './Hero';
 export * from './Features';
 export * from './Showcase';
-export * from './Specs';
+export * from './Tabs';
 export * from './Pricing';
 export * from './WaitlistModal';
 export * from './Footer';

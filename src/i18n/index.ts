@@ -69,8 +69,7 @@ export class I18nStore {
 export const i18n = new I18nStore({
   en: {
     'nav.features': 'Features',
-    'nav.showcase': 'Showcase',
-    'nav.specs': 'Technical Specs',
+    'nav.modules': 'Modules',
     'nav.pricing': 'Pricing',
     'nav.github': 'GitHub',
     
@@ -162,8 +161,7 @@ export const i18n = new I18nStore({
   },
   es: {
     'nav.features': 'Suite',
-    'nav.showcase': 'Galería',
-    'nav.specs': 'Especificaciones',
+    'nav.modules': 'Módulos',
     'nav.pricing': 'Precios',
     'nav.github': 'GitHub',
     
