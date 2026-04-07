@@ -116,6 +116,11 @@ export const i18n = new I18nStore({
 
     'showcase.title': 'Powerful Design Tools',
     'showcase.subtitle': 'Everything you need to build complex retro worlds.',
+    'showcase.module.tilemap.title': 'Tilemap Editor',
+    'showcase.module.tilemap.subtitle': 'The definitive tilemap design suite for ESP32',
+    'showcase.module.music.title': 'Music Editor',
+    'showcase.module.music.subtitle': 'Native 4-channel NES synthesizer for authentic 8-bit soundscapes',
+    'showcase.module.coming_soon': 'More features coming soon...',
     'showcase.editor.title': 'Integrated Workspace',
     'showcase.editor.description': 'Intuitive canvas with brush, eraser, rectangle fill, pipette tools, attribute tools, and animations tools.',
     'showcase.layers.title': 'Layer Management',
@@ -133,6 +138,7 @@ export const i18n = new I18nStore({
     
     'specs.title': 'Hardware Constraints',
     'specs.subtitle': 'Built to ensure compatibility with ESP32 and PixelRoot32 engine.',
+    'specs.module.tilemap.title': 'Tilemap Editor',
     'specs.engine_title': 'Engine Limits',
     'specs.visual_title': 'Visual System',
     'specs.data_title': 'Data & Palette',
@@ -203,6 +209,11 @@ export const i18n = new I18nStore({
 
     'showcase.title': 'Herramientas de Diseño Potentes',
     'showcase.subtitle': 'Todo lo que necesitas para construir mundos retro complejos.',
+    'showcase.module.tilemap.title': 'Tilemap Editor',
+    'showcase.module.tilemap.subtitle': 'La suite de diseño de tilemaps definitiva para ESP32',
+    'showcase.module.music.title': 'Music Editor',
+    'showcase.module.music.subtitle': 'Sintetizador nativo NES de 4 canales para paisajes sonoros auténticos de 8 bits',
+    'showcase.module.coming_soon': 'Más funcionalidades pronto...',
     'showcase.editor.title': 'Espacio de Trabajo Integrado',
     'showcase.editor.description': 'Lienzo intuitivo con herramientas de pincel, borrador, relleno rectangular, pipeta, atributos y animaciones.',
     'showcase.layers.title': 'Gestión de Capas',
@@ -220,6 +231,7 @@ export const i18n = new I18nStore({
     
     'specs.title': 'Restricciones de Hardware',
     'specs.subtitle': 'Construido para asegurar la compatibilidad con ESP32 y el motor PixelRoot32.',
+    'specs.module.tilemap.title': 'Tilemap Editor',
     'specs.engine_title': 'Límites del Motor',
     'specs.visual_title': 'Sistema Visual',
     'specs.data_title': 'Datos y Paleta',
