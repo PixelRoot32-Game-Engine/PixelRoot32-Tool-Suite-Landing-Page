@@ -9,8 +9,7 @@ export function Navigation(): string {
     subtitle: '',
     links: [
       { label: i18n.t('nav.features'), href: '#features' },
-      { label: i18n.t('nav.showcase'), href: '#showcase' },
-      { label: i18n.t('nav.specs'), href: '#specs' },
+      { label: i18n.t('nav.modules'), href: '#tabs' },
       { label: i18n.t('nav.pricing'), href: '#pricing' }
     ],
     i18n: i18n

@@ -3,9 +3,9 @@ import { Button } from 'pixelroot32-components-landing-page';
 
 export const Pricing = () => {
   return `
-    <section id="pricing" class="py-24 bg-background relative overflow-hidden">
+    <section id="pricing" class="py-24 bg-surface/30 border-y border-border-ui">
       <div class="container mx-auto px-4 relative z-10">
-        <div class="text-center mb-16">
+        <div class="text-center mb-8">
           <h2 class="text-4xl md:text-5xl font-mono font-black mb-4 uppercase tracking-tighter">
             <span class="text-primary">${i18n.t('pricing.title')}</span>
           </h2>
@@ -30,13 +30,13 @@ export const Pricing = () => {
             </div>
             
             <!-- Window Content -->
-            <div class="p-8 md:p-12 flex flex-col items-center flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
-              <p class="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-8 text-center px-4 leading-relaxed">
+            <div class="p-8 md:p-8 flex flex-col items-center flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
+              <p class="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-4 text-center px-4 leading-relaxed">
                 ${i18n.t('pricing.collector.target')}
               </p>
 
               <!-- Tool Suite Image -->
-              <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-10 flex items-center justify-center overflow-hidden group relative">
+              <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-4 flex items-center justify-center overflow-hidden group relative">
                 <img 
                   src="./assets/tilemap-editor.webp" 
                   alt="PixelRoot32 Tilemap Editor" 
@@ -48,7 +48,7 @@ export const Pricing = () => {
                 </div>
               </div>
 
-              <div class="flex flex-col items-center mb-10">
+              <div class="flex flex-col items-center mb-8">
                 <div class="text-3xl md:text-4xl font-black font-mono text-white tracking-tighter uppercase text-center">
                   ${i18n.t('pricing.collector.price')}
                 </div>
@@ -57,7 +57,7 @@ export const Pricing = () => {
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full mb-12 font-mono text-sm text-text-muted">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full mb-8 font-mono text-sm text-text-muted">
                 <div class="space-y-4">
                   <li class="flex items-start gap-3 list-none">
                     <span class="text-primary mt-1">✓</span>

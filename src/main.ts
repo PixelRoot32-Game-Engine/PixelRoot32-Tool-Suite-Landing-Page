@@ -1,6 +1,6 @@
 import './style.css'
 import { 
-  Navigation, initNavigation, Hero, Features, Showcase, Specs, Pricing, WaitlistModal, 
+  Navigation, initNavigation, Hero, Features, Showcase, Pricing, WaitlistModal, 
   Footer, initLanguageSwitcher, initWaitlistModal 
 } from './components';
 
@@ -36,7 +36,6 @@ function renderApp(): void {
     Hero(), 
     Features(), 
     Showcase(), 
-    Specs(), 
     Pricing(), 
     Footer(), 
     WaitlistModal()
