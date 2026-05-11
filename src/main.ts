@@ -1,8 +1,10 @@
 import './style.css'
 import { 
-  Navigation, initNavigation, Hero, Features, Showcase, Pricing, WaitlistModal, 
+  Navigation, initNavigation, Hero, Download, Features, Showcase, Pricing, WaitlistModal, 
   Footer, initLanguageSwitcher, initWaitlistModal 
 } from './components';
+import { initVersionDisplay } from './utils/version';
+import { i18n } from './i18n';
 
 /**
  * Helper to create an element from an HTML string safely
@@ -34,6 +36,7 @@ function renderApp(): void {
   const components = [
     Navigation(), 
     Hero(), 
+    Download(), 
     Features(), 
     Showcase(), 
     Pricing(), 
@@ -47,6 +50,9 @@ function renderApp(): void {
   initNavigation(app);
   initLanguageSwitcher(app);
   initWaitlistModal(app);
+  
+  // Initialize version display from GitHub
+  initVersionDisplay(i18n, app);
 
   console.log('PixelRoot32 Tool Suite Landing Page Rendered');
 }

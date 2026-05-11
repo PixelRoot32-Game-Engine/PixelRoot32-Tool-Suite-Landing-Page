@@ -9,9 +9,6 @@ export const Pricing = () => {
           <h2 class="text-4xl md:text-5xl font-mono font-black mb-4 uppercase tracking-tighter">
             <span class="text-primary">${i18n.t('pricing.title')}</span>
           </h2>
-          <p class="text-text-muted max-w-2xl mx-auto font-mono">
-            ${i18n.t('pricing.subtitle')}
-          </p>
           <div class="mt-8 max-w-2xl mx-auto">
             <div class="inline-block px-6 py-3 bg-primary/5 border border-primary/20 rounded-sm">
               <p class="text-primary text-xs font-mono uppercase tracking-widest leading-relaxed">
@@ -48,13 +45,15 @@ export const Pricing = () => {
                 </div>
               </div>
 
-              <div class="flex flex-col items-center mb-8">
-                <div class="text-3xl md:text-4xl font-black font-mono text-white tracking-tighter uppercase text-center">
-                  ${i18n.t('pricing.collector.price')}
+              <div class="flex flex-col items-center mt-2">
+                <div class="relative font-mono font-black text-5xl text-white tracking-tighter w-max">
+                  <p>$ 14<span class="text-lg tracking-normal">.99</span></p>
+                  <p class="absolute -top-6 -right-18 scale-50 text-text-muted font-normal text-5xl tracking-tighter">$ 19<span class="text-lg">.99</span><div class="absolute -top-0 -right-12 h-[1.5px] w-20 bg-text-muted"></div></p>
                 </div>
-                <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 animate-pulse">
-                  ${i18n.t('pricing.collector.price_sub')}
-                </div>
+              </div>
+
+              <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 mb-8 animate-pulse">
+                ${i18n.t('pricing.collector.price_sub')}
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full mb-8 font-mono text-sm text-text-muted">
@@ -93,11 +92,14 @@ export const Pricing = () => {
               </div>
 
               <div class="w-full mt-auto">
-                ${Button({
-                  label: `📦 ${i18n.t('pricing.collector.cta')}`,
-                  variant: 'primary',
-                  className: 'open-waitlist-btn w-full py-5 text-xl'
-                })}
+                <a 
+                  href="https://www.paypal.com/ncp/payment/HXABHQ7G79Y7Q"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center justify-center w-full py-5 bg-primary text-white font-mono text-xl font-bold uppercase tracking-widest hover:bg-primary-hover transition-all duration-200 shadow-block active:translate-y-1 active:translate-x-1 active:shadow-none"
+                >
+                  💳 ${i18n.t('pricing.collector.buy_now')}
+                </a>
               </div>
                     </div>
                   </div>
@@ -111,4 +113,4 @@ export const Pricing = () => {
               </div>
             </section>
           `;
-        };
+};

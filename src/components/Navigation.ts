@@ -8,6 +8,7 @@ export function Navigation(): string {
     title: '',
     subtitle: '',
     links: [
+      { label: i18n.t('nav.download'), href: '#download' },
       { label: i18n.t('nav.features'), href: '#features' },
       { label: i18n.t('nav.modules'), href: '#tabs' },
       { label: i18n.t('nav.pricing'), href: '#pricing' }
