@@ -1,5 +1,4 @@
 import { i18n } from '../i18n';
-import { Button } from 'pixelroot32-components-landing-page';
 
 export const Pricing = () => {
   return `
@@ -92,14 +91,11 @@ export const Pricing = () => {
               </div>
 
               <div class="w-full mt-auto">
-                <a 
-                  href="https://www.paypal.com/ncp/payment/HXABHQ7G79Y7Q"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex items-center justify-center w-full py-5 bg-primary text-white font-mono text-xl font-bold uppercase tracking-widest hover:bg-primary-hover transition-all duration-200 shadow-block active:translate-y-1 active:translate-x-1 active:shadow-none"
-                >
-                  💳 ${i18n.t('pricing.collector.buy_now')}
-                </a>
+                <!-- PayPal Button Container -->
+                <div id="paypal-button-container" class="min-h-[55px]"></div>
+                
+                <!-- Result Container (populated by checkout.js) -->
+                <div id="checkout-result"></div>
               </div>
                     </div>
                   </div>

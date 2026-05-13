@@ -168,7 +168,26 @@ export const i18n = new I18nStore({
     'footer.copyright': '© 2026 PixelRoot32. All rights reserved.',
 
     'language.english': 'English',
-    'language.spanish': 'Español'
+    'language.spanish': 'Español',
+
+    // Checkout UI
+    'checkout.loading': 'Processing your license...',
+    'checkout.success.title': 'Purchase Complete!',
+    'checkout.success.message': 'Your purchase has been processed successfully.',
+    'checkout.success.license_info': 'You will receive an email with your license key shortly.',
+    'checkout.success.transaction_id': 'Transaction ID',
+    'checkout.success.email_warning': 'Check your spam folder if you don\'t see the email within a few minutes.',
+    'checkout.duplicate.title': 'Transaction Already Processed',
+    'checkout.duplicate.message': 'This transaction was already processed.',
+    'checkout.duplicate.id': 'ID',
+    'checkout.duplicate.email_hint': 'Check your email for the original license.',
+    'checkout.error.title': 'Error',
+    'checkout.error.retry': 'Retry',
+    'checkout.cancel.message': 'Payment cancelled. No charge was made.',
+    'checkout.error.order_creation': 'Unable to start payment. Please try again.',
+    'checkout.error.capture': 'Error processing payment',
+    'checkout.error.connection': 'Connection error. Please try again.',
+    'checkout.error.paypal': 'PayPal error. Please try again.'
   },
   es: {
     'nav.features': 'Suite',
@@ -271,6 +290,25 @@ export const i18n = new I18nStore({
     'footer.copyright': '© 2026 PixelRoot32. Todos los derechos reservados.',
 
     'language.english': 'English',
-    'language.spanish': 'Español'
+    'language.spanish': 'Español',
+
+    // Checkout UI
+    'checkout.loading': 'Procesando tu licencia...',
+    'checkout.success.title': '¡Compra Completada!',
+    'checkout.success.message': 'Tu compra ha sido procesada correctamente.',
+    'checkout.success.license_info': 'Recibirás un correo electrónico con tu licencia.',
+    'checkout.success.transaction_id': 'ID de Transacción',
+    'checkout.success.email_warning': 'Revisa tu carpeta de spam si no ves el email en minutos.',
+    'checkout.duplicate.title': 'Transacción Ya Procesada',
+    'checkout.duplicate.message': 'Esta transacción ya fue procesada anteriormente.',
+    'checkout.duplicate.id': 'ID',
+    'checkout.duplicate.email_hint': 'Revisa tu correo para la licencia original.',
+    'checkout.error.title': 'Error',
+    'checkout.error.retry': 'Reintentar',
+    'checkout.cancel.message': 'Pago cancelado. No se ha realizado ningún cargo.',
+    'checkout.error.order_creation': 'No se pudo iniciar el pago. Por favor intenta de nuevo.',
+    'checkout.error.capture': 'Error procesando el pago',
+    'checkout.error.connection': 'Error de conexión. Por favor intenta de nuevo.',
+    'checkout.error.paypal': 'Error de PayPal. Por favor intenta de nuevo.'
   }
 });
