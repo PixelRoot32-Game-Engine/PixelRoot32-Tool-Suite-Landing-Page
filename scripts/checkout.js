@@ -34,6 +34,7 @@
   let sdkLoaded = false;
   let buttonsHidden = false;
   let lastResult = null; // { type: 'success'|'error'|'duplicate', data: any }
+  let currentSessionToken = null; // Session binding token
 
   // ─── i18n Helper ───
   // Get translation with fallback to English
@@ -126,7 +127,9 @@
           if (!data.orderId) {
             throw new Error('No order ID returned');
           }
-          console.log('[Checkout] Order created:', data.orderId);
+          // Store session token for binding validation
+          currentSessionToken = data.sessionToken || null;
+          console.log('[Checkout] Order created:', data.orderId, 'sessionToken:', currentSessionToken ? 'present' : 'missing');
           return data.orderId;
         })
         .catch(error => {
@@ -149,7 +152,8 @@
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            orderId: data.orderID
+            orderId: data.orderID,
+            sessionToken: currentSessionToken // Session binding validation
           })
         })
         .then(response => response.json())
