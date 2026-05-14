@@ -14,10 +14,24 @@
 
   // ─── Configuration ───
   const CONFIG = {
-    // Vercel API base URL - change for production
-    apiBase: (typeof import.meta !== 'undefined' && import.meta.env?.VITE_API_BASE)
-      ? import.meta.env.VITE_API_BASE
-      : 'https://pr32-paypal-payment.vercel.app',
+    /**
+     * DEV: default '' → /api/… on the Vite origin (proxy + bypass to PREVIEW_PROXY_TARGET).
+     *      Set VITE_DEV_API_DIRECT=true and VITE_API_BASE to call the backend URL directly (no proxy).
+     * PROD: VITE_API_BASE (absolute URL).
+     */
+    apiBase: (function resolveApiBase() {
+      if (typeof import.meta === 'undefined') {
+        return 'https://pr32-paypal-payment.vercel.app';
+      }
+      if (!import.meta.env.DEV) {
+        var prodBase = import.meta.env.VITE_API_BASE || 'https://pr32-paypal-payment.vercel.app';
+        return String(prodBase).replace(/\/$/, '');
+      }
+      if (import.meta.env.VITE_DEV_API_DIRECT === 'true' && import.meta.env.VITE_API_BASE) {
+        return String(import.meta.env.VITE_API_BASE).replace(/\/$/, '');
+      }
+      return '';
+    })(),
 
     // Product ID only - price comes from backend
     productId: 'pr32-license',
