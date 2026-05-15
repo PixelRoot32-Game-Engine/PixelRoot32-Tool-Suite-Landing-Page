@@ -37,7 +37,16 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
-    plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      {
+        name: 'html-transform',
+        transformIndexHtml(html) {
+          const cspConnectSrc = mode === 'development' ? 'http://localhost:3000' : ''
+          return html.replace('%CSP_CONNECT_SRC%', cspConnectSrc)
+        },
+      },
+    ],
     resolve: {
       alias: {
         'pixelroot32-components-landing-page/src': isLocalDev
