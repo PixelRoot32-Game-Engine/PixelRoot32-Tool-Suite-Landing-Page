@@ -172,7 +172,7 @@ export const i18n = new I18nStore({
 
     // Checkout UI
     'checkout.loading': 'Processing your license...',
-    'checkout.success.title': 'Purchase Complete!',
+    'checkout.success.title': 'Thank you for your support!',
     'checkout.success.message': 'Your purchase has been processed successfully.',
     'checkout.success.license_info': 'You will receive an email with your license key shortly.',
     'checkout.success.transaction_id': 'Transaction ID',
@@ -294,7 +294,7 @@ export const i18n = new I18nStore({
 
     // Checkout UI
     'checkout.loading': 'Procesando tu licencia...',
-    'checkout.success.title': '¡Compra Completada!',
+    'checkout.success.title': '¡Gracias por el apoyo!',
     'checkout.success.message': 'Tu compra ha sido procesada correctamente.',
     'checkout.success.license_info': 'Recibirás un correo electrónico con tu licencia.',
     'checkout.success.transaction_id': 'ID de Transacción',

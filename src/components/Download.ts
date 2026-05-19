@@ -34,7 +34,6 @@ export function Download(): string {
           <!-- Window Header -->
           <div class="bg-[#444444] px-4 py-3 border-b-2 border-[#1a1a1a] flex justify-between items-center">
             <span class="text-white font-mono text-sm font-bold uppercase tracking-wider">${i18n.t('download.available_os')}</span>
-            <span class="font-mono text-[10px] text-primary uppercase tracking-wider bg-primary/10 px-2 py-1">v1.0.0</span>
           </div>
           
           <!-- Window Content -->

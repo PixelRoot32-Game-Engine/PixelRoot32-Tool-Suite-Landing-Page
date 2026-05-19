@@ -27,10 +27,7 @@ export const Pricing = () => {
             
             <!-- Window Content -->
             <div class="p-8 md:p-8 flex flex-col items-center flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
-              <p class="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-4 text-center px-4 leading-relaxed">
-                ${i18n.t('pricing.collector.target')}
-              </p>
-
+  
               <!-- Tool Suite Image -->
               <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-4 flex items-center justify-center overflow-hidden group relative">
                 <img 
