@@ -82,10 +82,10 @@ export const i18n = new I18nStore({
 
     'features.title': 'PixelRoot32 Tool Suite',
     'features.subtitle': 'A growing ecosystem of professional tools designed to enhance your experience with the free PixelRoot32 engine.',
-    'features.tilemap.title': 'Tilemap Editor (Coming Soon)',
+    'features.tilemap.title': 'Tilemap Editor',
     'features.tilemap.description': 'Advanced multi-layer design, binary optimization, and native C++ export for ESP32 hardware.',
     'features.music.title': 'Music Editor (Upcoming)',
-    'features.music.description': 'Native 4-channel NES synthesizer (Pulse, Triangle, Noise) for authentic 8-bit soundscapes.',
+    'features.music.description': '8-voice dynamic synthesizer (Pulse w/ sweep, Triangle w/ sweep, Sine, Saw, Noise) for authentic chitune music.',
     'features.suite.title': 'Perpetual License',
     'features.suite.description': 'One-time payment for the entire suite. Pre-ordering the Tilemap Editor will reserve your access to all future modules at no extra cost.',
 
@@ -209,10 +209,10 @@ export const i18n = new I18nStore({
 
     'features.title': 'PixelRoot32 Tool Suite',
     'features.subtitle': 'Un ecosistema creciente de herramientas profesionales diseñadas para potenciar tu experiencia con el motor gratuito PixelRoot32.',
-    'features.tilemap.title': 'Tilemap Editor (Próximamente)',
+    'features.tilemap.title': 'Tilemap Editor',
     'features.tilemap.description': 'Diseño avanzado multi-capa, optimización binaria y exportación nativa a C++ para hardware ESP32.',
     'features.music.title': 'Music Editor (En Desarrollo)',
-    'features.music.description': 'Sintetizador nativo NES de 4 canales (Pulse, Triangle, Noise) para paisajes sonoros auténticos de 8 bits.',
+    'features.music.description': 'Sintetizador dinámico de 8 vocales (Pulse con sweep, Triangle con sweep, Sine, Saw, Noise) para chitunes authenticos.',
     'features.suite.title': 'Licencia Perpetua',
     'features.suite.description': 'Pago único por toda la suite. La reserva del Tilemap Editor te dará acceso a todos los módulos futuros sin costo adicional.',
 
