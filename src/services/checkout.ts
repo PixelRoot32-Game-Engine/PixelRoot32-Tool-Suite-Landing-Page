@@ -57,11 +57,99 @@ const CheckoutConfig = {
 
 let sdkLoaded = false;
 let buttonsHidden = false;
+let buttonsInitialized = false;
+let isEmailValid = false;
+let hasInteracted = false;
 let lastResult: CheckoutResult | null = null;
 let currentSessionToken: string | null = null;
 
 function t(key: string): string {
   return i18n.t(`checkout.${key}`, key);
+}
+
+function getEmailFromDom(): string {
+  const input = document.getElementById('email-input') as HTMLInputElement | null;
+  return input ? input.value.trim() : '';
+}
+
+function validateEmail(email: string): boolean {
+  if (!email) return false;
+  // Simple email format check
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function attemptPayPalInit(): void {
+  if (sdkLoaded && !buttonsInitialized) {
+    buttonsInitialized = true;
+    initPayPalCheckout();
+  }
+}
+
+function setupEmailValidation(): void {
+  const emailInput = document.getElementById('email-input') as HTMLInputElement | null;
+  const emailError = document.getElementById('email-error');
+  const paypalOverlay = document.getElementById('paypal-overlay');
+
+  if (!emailInput || !emailError) {
+    console.warn('[Checkout] Email input or error element not found in DOM');
+    return;
+  }
+
+  if (paypalOverlay) {
+    paypalOverlay.addEventListener('click', () => {
+      emailError.textContent = i18n.t('checkout.email_error', 'Please enter a valid email');
+      emailError.classList.remove('hidden');
+    });
+  }
+
+  function updateOverlay(valid: boolean): void {
+    if (paypalOverlay) {
+      paypalOverlay.classList.toggle('hidden', valid);
+    }
+  }
+
+  const validate = () => {
+    const email = getEmailFromDom();
+
+    if (!email) {
+      isEmailValid = false;
+      emailError.textContent = i18n.t('checkout.email_error', 'Please enter a valid email');
+      emailError.classList.remove('hidden');
+      updateOverlay(false);
+      return;
+    }
+
+    if (!validateEmail(email)) {
+      isEmailValid = false;
+      emailError.textContent = i18n.t('checkout.email_error', 'Please enter a valid email');
+      emailError.classList.remove('hidden');
+      updateOverlay(false);
+    } else {
+      isEmailValid = true;
+      emailError.classList.add('hidden');
+      updateOverlay(true);
+    }
+  };
+
+  // On blur — always validate
+  emailInput.addEventListener('blur', () => {
+    hasInteracted = true;
+    validate();
+  });
+
+  // On keystroke — validate after first interaction only
+  emailInput.addEventListener('input', () => {
+    if (hasInteracted) {
+      validate();
+    }
+  });
+
+  // Mark as interacted on first focus
+  emailInput.addEventListener('focus', () => {
+    if (!hasInteracted) {
+      hasInteracted = true;
+    }
+  });
 }
 
 function initPayPalCheckout(): void {
@@ -103,6 +191,14 @@ function initPayPalCheckout(): void {
       height: 55,
     },
 
+    onClick: function (_data: { fundingSource: string }, actions: { reject: () => void; resolve: () => void }) {
+      const email = getEmailFromDom();
+      if (!email || !validateEmail(email)) {
+        return actions.reject();
+      }
+      return actions.resolve();
+    },
+
     createOrder: function (_data: unknown, _actions: unknown) {
       console.log('[Checkout] createOrder called');
 
@@ -114,6 +210,7 @@ function initPayPalCheckout(): void {
         body: JSON.stringify({
           product: CheckoutConfig.productId,
           currency: CheckoutConfig.currency,
+          email: getEmailFromDom(),
         }),
       })
         .then((response) => {
@@ -152,6 +249,7 @@ function initPayPalCheckout(): void {
         body: JSON.stringify({
           orderId: data.orderID,
           sessionToken: currentSessionToken,
+          email: getEmailFromDom(),
         }),
       })
         .then((response) => response.json())
@@ -186,16 +284,16 @@ function initPayPalCheckout(): void {
   }).render(`#${PayPalFrontendConfig.UI.BUTTON_CONTAINER_ID}`);
 }
 
-function hidePayPalButtons(): void {
+function hideCheckoutForm(): void {
   buttonsHidden = true;
-  const container = document.getElementById(PayPalFrontendConfig.UI.BUTTON_CONTAINER_ID);
-  if (container) {
-    container.style.display = 'none';
+  const form = document.getElementById('checkout-form');
+  if (form) {
+    form.style.display = 'none';
   }
 }
 
 function showLoading(message: string): void {
-  hidePayPalButtons();
+  hideCheckoutForm();
   lastResult = { type: 'loading', data: message };
   const container = getOrCreateResultContainer();
   container.innerHTML = `
@@ -208,7 +306,7 @@ function showLoading(message: string): void {
 }
 
 function showSuccess(result: CaptureResponse): void {
-  hidePayPalButtons();
+  hideCheckoutForm();
   lastResult = { type: 'success', data: result };
   const container = getOrCreateResultContainer();
   container.innerHTML = `
@@ -245,7 +343,7 @@ function showSuccess(result: CaptureResponse): void {
 }
 
 function showDuplicate(result: CaptureResponse): void {
-  hidePayPalButtons();
+  hideCheckoutForm();
   lastResult = { type: 'duplicate', data: result };
   const container = getOrCreateResultContainer();
   container.innerHTML = `
@@ -271,7 +369,7 @@ function showDuplicate(result: CaptureResponse): void {
 }
 
 function showError(message: string): void {
-  hidePayPalButtons();
+  hideCheckoutForm();
   lastResult = { type: 'error', data: message };
   const container = getOrCreateResultContainer();
   container.innerHTML = `
@@ -362,7 +460,8 @@ function loadPayPalSDK(): void {
   script.onload = () => {
     console.log(`[Checkout] PayPal SDK loaded (${currentLocale})`);
     sdkLoaded = true;
-    initPayPalCheckout();
+    buttonsInitialized = false;
+    attemptPayPalInit();
   };
   script.onerror = () => {
     console.error('[Checkout] Failed to load PayPal SDK');
@@ -379,8 +478,12 @@ export const PayPalCheckout = {
 
 export function initPayPalCheckoutMain(): void {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadPayPalSDK);
+    document.addEventListener('DOMContentLoaded', () => {
+      setupEmailValidation();
+      loadPayPalSDK();
+    });
   } else {
+    setupEmailValidation();
     loadPayPalSDK();
   }
 

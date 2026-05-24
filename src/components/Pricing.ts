@@ -88,9 +88,28 @@ export const Pricing = () => {
               </div>
 
               <div class="w-full mt-auto">
-                <!-- PayPal Button Container -->
-                <div id="paypal-button-container" class="min-h-[55px]"></div>
-                
+                <div id="checkout-form">
+                  <!-- Email Input Field -->
+                  <div class="mb-4">
+                    <label for="email-input" class="block text-white font-mono text-sm font-bold uppercase tracking-wider mb-2">
+                      ${i18n.t('checkout.email_label')}
+                    </label>
+                    <input
+                      id="email-input"
+                      type="email"
+                      placeholder="${i18n.t('checkout.email_placeholder')}"
+                      class="w-full px-4 py-3 bg-[#1a1a1a] border-2 border-[#444] text-white font-mono text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-primary transition-colors"
+                    />
+                    <div id="email-error" class="text-red-500 font-mono text-xs mt-1 hidden"></div>
+                  </div>
+
+                  <!-- PayPal Button Container -->
+                  <div class="relative">
+                    <div id="paypal-button-container" class="min-h-[55px]"></div>
+                    <div id="paypal-overlay" class="absolute inset-0 z-10 cursor-pointer"></div>
+                  </div>
+                </div>
+
                 <!-- Result Container (populated by checkout.js) -->
                 <div id="checkout-result"></div>
               </div>

@@ -187,7 +187,12 @@ export const i18n = new I18nStore({
     'checkout.error.order_creation': 'Unable to start payment. Please try again.',
     'checkout.error.capture': 'Error processing payment',
     'checkout.error.connection': 'Connection error. Please try again.',
-    'checkout.error.paypal': 'PayPal error. Please try again.'
+    'checkout.error.paypal': 'PayPal error. Please try again.',
+
+    // Email field
+    'checkout.email_label': 'Email address',
+    'checkout.email_placeholder': 'Enter your email',
+    'checkout.email_error': 'Please enter a valid email'
   },
   es: {
     'nav.features': 'Suite',
@@ -309,6 +314,11 @@ export const i18n = new I18nStore({
     'checkout.error.order_creation': 'No se pudo iniciar el pago. Por favor intenta de nuevo.',
     'checkout.error.capture': 'Error procesando el pago',
     'checkout.error.connection': 'Error de conexión. Por favor intenta de nuevo.',
-    'checkout.error.paypal': 'Error de PayPal. Por favor intenta de nuevo.'
+    'checkout.error.paypal': 'Error de PayPal. Por favor intenta de nuevo.',
+
+    // Email field
+    'checkout.email_label': 'Correo electrónico',
+    'checkout.email_placeholder': 'Ingresa tu correo',
+    'checkout.email_error': 'Ingresa un correo válido'
   }
 });
