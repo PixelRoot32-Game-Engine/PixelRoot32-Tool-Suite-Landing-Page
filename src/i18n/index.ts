@@ -77,7 +77,7 @@ export const i18n = new I18nStore({
     'hero.version': 'Tool Suite v1.0.0',
     'hero.version.available': 'coming soon',
     'hero.title': 'PixelRoot32 Tool Suite',
-    'hero.subtitle': 'The definitive production suite for ESP32. The Tilemap Editor will be the first module to launch, granting you reserved access to the upcoming Music Editor and future tools.',
+    'hero.subtitle': 'The definitive production suite for ESP32. The Tilemap Editor is the first module to launch, granting you reserved access to the upcoming Music Editor and future tools.',
     'hero.cta.download': 'GET THE SUITE',
 
     'features.title': 'PixelRoot32 Tool Suite',
@@ -204,7 +204,7 @@ export const i18n = new I18nStore({
     'hero.version': 'Tool Suite v1.0.0',
     'hero.version.available': 'próximamente',
     'hero.title': 'PixelRoot32 Tool Suite',
-    'hero.subtitle': 'La suite de producción definitiva para ESP32. El Tilemap Editor será el primer módulo en lanzarse, otorgándote acceso reservado al próximo Music Editor y futuras herramientas.',
+    'hero.subtitle': 'La suite de producción definitiva para ESP32. El Tilemap Editor es el primer módulo en lanzarse, otorgándote acceso reservado al próximo Music Editor y futuras herramientas.',
     'hero.cta.download': 'PRÓXIMAMENTE',
 
     'features.title': 'PixelRoot32 Tool Suite',

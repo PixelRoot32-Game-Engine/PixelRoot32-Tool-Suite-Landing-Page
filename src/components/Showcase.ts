@@ -51,32 +51,32 @@ const modules: ModuleTab[] = [
       {
         titleKey: 'showcase.editor.title',
         descriptionKey: 'showcase.editor.description',
-        image: './assets/main-canvas-section.webp'
+        image: './assets/tilemap/main-canvas-section.webp'
       },
       {
         titleKey: 'showcase.tileset.title',
         descriptionKey: 'showcase.tileset.description',
-        image: './assets/tileset-section.webp'
+        image: './assets/tilemap/tileset-section.webp'
       },
       {
         titleKey: 'showcase.layers.title',
         descriptionKey: 'showcase.layers.description',
-        image: './assets/layers-section.webp'
+        image: './assets/tilemap/layers-section.webp'
       },
       {
         titleKey: 'showcase.scenes.title',
         descriptionKey: 'showcase.scenes.description',
-        image: './assets/scenes-section.webp'
+        image: './assets/tilemap/scenes-section.webp'
       },
       {
         titleKey: 'showcase.animation.title',
         descriptionKey: 'showcase.animation.description',
-        image: './assets/animation-panel.webp'
+        image: './assets/tilemap/animation-panel.webp'
       },
       {
         titleKey: 'showcase.export.title',
         descriptionKey: 'showcase.export.description',
-        image: './assets/export-settings.webp'
+        image: './assets/tilemap/export-settings.webp'
       }
     ],
     specs: [
