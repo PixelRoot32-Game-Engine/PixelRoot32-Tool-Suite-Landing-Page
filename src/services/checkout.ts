@@ -58,7 +58,6 @@ const CheckoutConfig = {
 let sdkLoaded = false;
 let buttonsHidden = false;
 let buttonsInitialized = false;
-let isEmailValid = false;
 let hasInteracted = false;
 let lastResult: CheckoutResult | null = null;
 let currentSessionToken: string | null = null;
@@ -112,7 +111,6 @@ function setupEmailValidation(): void {
     const email = getEmailFromDom();
 
     if (!email) {
-      isEmailValid = false;
       emailError.textContent = i18n.t('checkout.email_error', 'Please enter a valid email');
       emailError.classList.remove('hidden');
       updateOverlay(false);
@@ -120,12 +118,10 @@ function setupEmailValidation(): void {
     }
 
     if (!validateEmail(email)) {
-      isEmailValid = false;
       emailError.textContent = i18n.t('checkout.email_error', 'Please enter a valid email');
       emailError.classList.remove('hidden');
       updateOverlay(false);
     } else {
-      isEmailValid = true;
       emailError.classList.add('hidden');
       updateOverlay(true);
     }

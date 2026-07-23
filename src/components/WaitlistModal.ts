@@ -1,5 +1,4 @@
 import { i18n } from '../i18n';
-import { subscribeToNewsletter } from '../services/subscription';
 import { Button } from 'pixelroot32-components-landing-page';
 
 export const WaitlistModal = () => {
@@ -131,30 +130,16 @@ export const initWaitlistModal = (container: HTMLElement = document.body) => {
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const emailInput = container.querySelector('#waitlist-email') as HTMLInputElement;
-    const earlyAccessInput = container.querySelector('#early-access-check') as HTMLInputElement;
-    const email = emailInput.value;
-    const isEarlyAccess = earlyAccessInput.checked;
-    
-    // Set loading state
+
     if (submitBtn) submitBtn.disabled = true;
     if (submitText) submitText.classList.add('hidden');
     if (submitLoading) submitLoading.classList.remove('hidden');
     if (errorMsg) errorMsg.classList.add('hidden');
 
     try {
-      const result = await subscribeToNewsletter(email, { early_access: isEarlyAccess });
-
-      if (result.success) {
-        // Show success message
-        formContainer?.classList.add('hidden');
-        successMsg?.classList.remove('hidden');
-      } else {
-        // Show error message
-        if (errorMsg) {
-          errorMsg.textContent = result.message || 'Error occurred';
-          errorMsg.classList.remove('hidden');
-        }
+      if (errorMsg) {
+        errorMsg.textContent = i18n.t('waitlist.unavailable');
+        errorMsg.classList.remove('hidden');
       }
     } catch (error) {
       if (errorMsg) {

@@ -122,6 +122,7 @@ export const i18n = new I18nStore({
     'waitlist.submit': 'Keep me posted',
     'waitlist.disclaimer': 'No spam. Unsubscribe anytime.',
     'waitlist.success': 'You\'re on the list! We\'ll be in touch soon.',
+    'waitlist.unavailable': 'Waitlist signup is temporarily unavailable. Please check back later.',
     'waitlist.close': 'Close',
 
     'showcase.title': 'Powerful Design Tools',
@@ -249,6 +250,7 @@ export const i18n = new I18nStore({
     'waitlist.submit': 'Manténme informado',
     'waitlist.disclaimer': 'Sin spam. Cancela en cualquier momento.',
     'waitlist.success': '¡Ya estás en la lista! Nos pondremos en contacto pronto.',
+    'waitlist.unavailable': 'El registro en la lista de espera no está disponible por ahora. Vuelve más tarde.',
     'waitlist.close': 'Cerrar',
 
     'showcase.title': 'Herramientas de Diseño Potentes',
