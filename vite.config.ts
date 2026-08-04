@@ -42,7 +42,8 @@ export default defineConfig(({ mode }) => {
       {
         name: 'html-transform',
         transformIndexHtml(html) {
-          const cspConnectSrc = mode === 'development' ? 'http://localhost:3000' : ''
+          const cspConnectSrc =
+            mode === 'development' ? 'http://localhost:3000' : (env.VITE_API_BASE || '').replace(/\/$/, '')
           return html.replace('%CSP_CONNECT_SRC%', cspConnectSrc)
         },
       },
