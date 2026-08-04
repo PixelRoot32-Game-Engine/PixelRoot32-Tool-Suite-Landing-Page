@@ -1,5 +1,4 @@
 import { i18n } from '../i18n';
-import { Button } from 'pixelroot32-components-landing-page';
 
 export function Hero(): string {
   return `<main class="pt-32 pb-16 lg:pt-48 lg:pb-32 relative overflow-hidden">
@@ -16,18 +15,10 @@ export function Hero(): string {
       ${i18n.t('hero.subtitle')}
     </p>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-      ${Button({
-        label: i18n.t('hero.cta.download'),
-        variant: 'primary',
-        className: 'open-waitlist-btn w-full sm:w-auto px-8 py-4 text-lg'
-      })}
-    </div>
-
     <div class="relative max-w-5xl mx-auto">
       <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-retro opacity-20 blur-xl"></div>
       <div class="relative bg-surface border-4 border-black shadow-block-hover-lg">
-        <img src="./assets/tilemap-editor.webp" alt="PixelRoot32 Tilemap Editor" class="h-auto pixel-art">
+        <img src="./assets/tilemap/tilemap-editor.webp" alt="PixelRoot32 Tilemap Editor" class="h-auto pixel-art">
       </div>
     </div>
   </div>

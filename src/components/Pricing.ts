@@ -1,5 +1,4 @@
 import { i18n } from '../i18n';
-import { Button } from 'pixelroot32-components-landing-page';
 
 export const Pricing = () => {
   return `
@@ -9,9 +8,6 @@ export const Pricing = () => {
           <h2 class="text-4xl md:text-5xl font-mono font-black mb-4 uppercase tracking-tighter">
             <span class="text-primary">${i18n.t('pricing.title')}</span>
           </h2>
-          <p class="text-text-muted max-w-2xl mx-auto font-mono">
-            ${i18n.t('pricing.subtitle')}
-          </p>
           <div class="mt-8 max-w-2xl mx-auto">
             <div class="inline-block px-6 py-3 bg-primary/5 border border-primary/20 rounded-sm">
               <p class="text-primary text-xs font-mono uppercase tracking-widest leading-relaxed">
@@ -31,14 +27,11 @@ export const Pricing = () => {
             
             <!-- Window Content -->
             <div class="p-8 md:p-8 flex flex-col items-center flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
-              <p class="text-primary text-xs font-mono uppercase tracking-[0.2em] mb-4 text-center px-4 leading-relaxed">
-                ${i18n.t('pricing.collector.target')}
-              </p>
-
+  
               <!-- Tool Suite Image -->
               <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-4 flex items-center justify-center overflow-hidden group relative">
                 <img 
-                  src="./assets/tilemap-editor.webp" 
+                  src="./assets/tilemap/tilemap-editor.webp" 
                   alt="PixelRoot32 Tilemap Editor" 
                   class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 >
@@ -48,13 +41,15 @@ export const Pricing = () => {
                 </div>
               </div>
 
-              <div class="flex flex-col items-center mb-8">
-                <div class="text-3xl md:text-4xl font-black font-mono text-white tracking-tighter uppercase text-center">
-                  ${i18n.t('pricing.collector.price')}
+              <div class="flex flex-col items-center mt-2">
+                <div class="relative font-mono font-black text-5xl text-white tracking-tighter w-max">
+                  <p>$ 14<span class="text-lg tracking-normal">.99</span></p>
+                  <p class="absolute -top-6 -right-18 scale-50 text-text-muted font-normal text-5xl tracking-tighter">$ 19<span class="text-lg">.99</span><div class="absolute -top-0 -right-12 h-[1.5px] w-20 bg-text-muted"></div></p>
                 </div>
-                <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 animate-pulse">
-                  ${i18n.t('pricing.collector.price_sub')}
-                </div>
+              </div>
+
+              <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 mb-8 animate-pulse">
+                ${i18n.t('pricing.collector.price_sub')}
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full mb-8 font-mono text-sm text-text-muted">
@@ -93,11 +88,30 @@ export const Pricing = () => {
               </div>
 
               <div class="w-full mt-auto">
-                ${Button({
-                  label: `📦 ${i18n.t('pricing.collector.cta')}`,
-                  variant: 'primary',
-                  className: 'open-waitlist-btn w-full py-5 text-xl'
-                })}
+                <div id="checkout-form">
+                  <!-- Email Input Field -->
+                  <div class="mb-4">
+                    <label for="email-input" class="block text-white font-mono text-sm font-bold uppercase tracking-wider mb-2">
+                      ${i18n.t('checkout.email_label')}
+                    </label>
+                    <input
+                      id="email-input"
+                      type="email"
+                      placeholder="${i18n.t('checkout.email_placeholder')}"
+                      class="w-full px-4 py-3 bg-[#1a1a1a] border-2 border-[#444] text-white font-mono text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-primary transition-colors"
+                    />
+                    <div id="email-error" class="text-red-500 font-mono text-xs mt-1 hidden"></div>
+                  </div>
+
+                  <!-- PayPal Button Container -->
+                  <div class="relative">
+                    <div id="paypal-button-container" class="min-h-[55px]"></div>
+                    <div id="paypal-overlay" class="absolute inset-0 z-10 cursor-pointer"></div>
+                  </div>
+                </div>
+
+                <!-- Result Container (populated by checkout.js) -->
+                <div id="checkout-result"></div>
               </div>
                     </div>
                   </div>
@@ -111,4 +125,4 @@ export const Pricing = () => {
               </div>
             </section>
           `;
-        };
+};
