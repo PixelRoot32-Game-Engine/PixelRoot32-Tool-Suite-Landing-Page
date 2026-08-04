@@ -1,5 +1,6 @@
 export * from './Navigation';
 export * from './Hero';
+export * from './Download';
 export * from './Features';
 export * from './Showcase';
 export * from './Tabs';
