@@ -77,6 +77,11 @@ const modules: ModuleTab[] = [
         titleKey: 'showcase.export.title',
         descriptionKey: 'showcase.export.description',
         image: './assets/tilemap/export-settings.webp'
+      },
+      {
+        titleKey: 'showcase.rooms.title',
+        descriptionKey: 'showcase.rooms.description',
+        image: './assets/tilemap/rooms-section.webp'
       }
     ],
     specs: [
