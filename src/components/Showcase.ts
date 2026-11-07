@@ -82,6 +82,11 @@ const modules: ModuleTab[] = [
         titleKey: 'showcase.rooms.title',
         descriptionKey: 'showcase.rooms.description',
         image: './assets/tilemap/rooms-section.webp'
+      },
+      {
+        titleKey: 'showcase.isometric.title',
+        descriptionKey: 'showcase.isometric.description',
+        image: './assets/tilemap/isometric-section.webp'
       }
     ],
     specs: [

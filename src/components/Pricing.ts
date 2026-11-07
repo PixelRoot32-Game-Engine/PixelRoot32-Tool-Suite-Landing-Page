@@ -31,7 +31,7 @@ export const Pricing = () => {
               <!-- Tool Suite Image -->
               <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-4 flex items-center justify-center overflow-hidden group relative">
                 <img 
-                  src="./assets/tilemap/tilemap-editor.webp" 
+                  src="./assets/tilemap/tilemap-editor-orthogonal.webp" 
                   alt="PixelRoot32 Tilemap Editor" 
                   class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
                 >
@@ -43,8 +43,8 @@ export const Pricing = () => {
 
               <div class="flex flex-col items-center mt-2">
                 <div class="relative font-mono font-black text-5xl text-white tracking-tighter w-max">
-                  <p>$ 14<span class="text-lg tracking-normal">.99</span></p>
-                  <p class="absolute -top-6 -right-18 scale-50 text-text-muted font-normal text-5xl tracking-tighter">$ 19<span class="text-lg">.99</span><div class="absolute -top-0 -right-12 h-[1.5px] w-20 bg-text-muted"></div></p>
+                  <p>$ 5<span class="text-lg tracking-normal">.99</span></p>
+                  <p class="absolute -top-6 -right-18 scale-50 text-text-muted font-normal text-5xl tracking-tighter">$ 10<span class="text-lg">.99</span><div class="absolute -top-0 -right-12 h-[1.5px] w-20 bg-text-muted"></div></p>
                 </div>
               </div>
 
