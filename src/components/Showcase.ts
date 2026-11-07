@@ -86,7 +86,7 @@ const modules: ModuleTab[] = [
       {
         titleKey: 'showcase.isometric.title',
         descriptionKey: 'showcase.isometric.description',
-        image: './assets/tilemap/isometric-section.png'
+        image: './assets/tilemap/isometric-section.webp'
       }
     ],
     specs: [

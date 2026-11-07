@@ -23,7 +23,7 @@ export function Hero(): string {
           id: 'hero-carousel',
           slides: [
             { src: './assets/tilemap/tilemap-editor-orthogonal.webp', alt: i18n.t('hero.carousel.orthogonal') },
-            { src: './assets/tilemap/tilemap-editor-isometric.png', alt: i18n.t('hero.carousel.isometric') }
+            { src: './assets/tilemap/tilemap-editor-isometric.webp', alt: i18n.t('hero.carousel.isometric') }
           ],
           prevLabel: i18n.t('hero.carousel.prev'),
           nextLabel: i18n.t('hero.carousel.next')
