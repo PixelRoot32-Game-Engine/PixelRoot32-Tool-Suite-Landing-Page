@@ -18,105 +18,108 @@ export const Pricing = () => {
         </div>
 
         <div class="flex items-center justify-center max-w-6xl mx-auto">
-          <!-- Collector's Edition Window -->
-          <div class="w-full max-w-xl bg-[#333333] border-2 border-[#1a1a1a] shadow-block flex flex-col relative z-20">
+          <!-- Collector's Edition Window: one column on mobile, two on desktop -->
+          <div class="w-full max-w-xl lg:max-w-5xl bg-[#333333] border-2 border-[#1a1a1a] shadow-block flex flex-col relative z-20">
             <!-- Window Header -->
             <div class="bg-[#444444] px-4 py-2 border-b-2 border-[#1a1a1a] flex justify-between items-center">
               <span class="text-white font-mono text-sm font-bold uppercase tracking-wider">${i18n.t('pricing.collector.title')}</span>
             </div>
-            
+
             <!-- Window Content -->
-            <div class="p-8 md:p-8 flex flex-col items-center flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
-  
-              <!-- Tool Suite Image -->
-              <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-4 flex items-center justify-center overflow-hidden group relative">
-                <img 
-                  src="./assets/tilemap/tilemap-editor-orthogonal.webp" 
-                  alt="PixelRoot32 Tilemap Editor" 
-                  class="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-500"
-                >
-                <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60"></div>
-                <div class="absolute bottom-4 left-4 text-primary font-mono text-[10px] uppercase tracking-widest">
-                  Module 01: Tilemap Editor
-                </div>
-              </div>
+            <div class="p-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 flex-grow bg-gradient-to-b from-[#333333] to-[#2a2a2a]">
 
-              <div class="flex flex-col items-center mt-2">
-                <div class="relative font-mono font-black text-5xl text-white tracking-tighter w-max">
-                  <p>$ 5<span class="text-lg tracking-normal">.99</span></p>
-                  <p class="absolute -top-6 -right-18 scale-50 text-text-muted font-normal text-5xl tracking-tighter">$ 10<span class="text-lg">.99</span><div class="absolute -top-0 -right-12 h-[1.5px] w-20 bg-text-muted"></div></p>
-                </div>
-              </div>
-
-              <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 mb-8 animate-pulse">
-                ${i18n.t('pricing.collector.price_sub')}
-              </div>
-
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-4 w-full mb-8 font-mono text-sm text-text-muted">
-                <div class="space-y-4">
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span class="text-white font-bold">${i18n.t('pricing.collector.feat1')}</span>
-                  </li>
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span>${i18n.t('pricing.collector.feat2')}</span>
-                  </li>
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span>${i18n.t('pricing.collector.feat3')}</span>
-                  </li>
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span>${i18n.t('pricing.collector.feat4')}</span>
-                  </li>
-                </div>
-                <div class="space-y-4">
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span>${i18n.t('pricing.collector.feat5')}</span>
-                  </li>
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span class="text-primary font-bold">${i18n.t('pricing.collector.feat6')}</span>
-                  </li>
-                  <li class="flex items-start gap-3 list-none">
-                    <span class="text-primary mt-1">✓</span>
-                    <span class="text-white">${i18n.t('pricing.collector.feat7')}</span>
-                  </li>
-                </div>
-              </div>
-
-              <div class="w-full mt-auto">
-                <div id="checkout-form">
-                  <!-- Email Input Field -->
-                  <div class="mb-4">
-                    <label for="email-input" class="block text-white font-mono text-sm font-bold uppercase tracking-wider mb-2">
-                      ${i18n.t('checkout.email_label')}
-                    </label>
-                    <input
-                      id="email-input"
-                      type="email"
-                      placeholder="${i18n.t('checkout.email_placeholder')}"
-                      class="w-full px-4 py-3 bg-[#1a1a1a] border-2 border-[#444] text-white font-mono text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-primary transition-colors"
-                    />
-                    <div id="email-error" class="text-red-500 font-mono text-xs mt-1 hidden"></div>
-                  </div>
-
-                  <!-- PayPal Button Container -->
-                  <div class="relative">
-                    <div id="paypal-button-container" class="min-h-[55px]"></div>
-                    <div id="paypal-overlay" class="absolute inset-0 z-10 cursor-pointer"></div>
+              <!-- Left: product shot + price -->
+              <div class="flex flex-col items-center lg:justify-center">
+                <!-- The image stays at full opacity: fading it re-rasterises the
+                     downscaled screenshot and makes the grid lines shimmer.
+                     The dimming lives in an overlay instead. -->
+                <div class="w-full aspect-video bg-[#1a1a1a] border border-[#444444] mb-6 flex items-center justify-center overflow-hidden group relative">
+                  <img
+                    src="./assets/tilemap/tilemap-editor-orthogonal.webp"
+                    alt="PixelRoot32 Tilemap Editor"
+                    class="w-full h-full object-contain"
+                  >
+                  <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors duration-500"></div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] to-transparent opacity-60"></div>
+                  <div class="absolute bottom-4 left-4 text-primary font-mono text-[10px] uppercase tracking-widest">
+                    Module 01: Tilemap Editor
                   </div>
                 </div>
 
-                <!-- Result Container (populated by checkout.js) -->
-                <div id="checkout-result"></div>
+                <div class="flex items-start gap-3 font-mono text-white">
+                  <p class="font-black text-5xl tracking-tighter">$ 5<span class="text-lg tracking-normal">.99</span></p>
+                  <p class="mt-1 text-2xl text-text-muted line-through decoration-2">$ 10.99</p>
+                </div>
+
+                <div class="text-primary font-mono text-xs uppercase tracking-[0.3em] mt-2 animate-pulse">
+                  ${i18n.t('pricing.collector.price_sub')}
+                </div>
               </div>
+
+              <!-- Right: features + checkout -->
+              <div class="flex flex-col">
+                <ul class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-x-12 gap-y-4 w-full mb-8 font-mono text-sm text-text-muted">
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span class="text-white font-bold">${i18n.t('pricing.collector.feat1')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span>${i18n.t('pricing.collector.feat2')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span>${i18n.t('pricing.collector.feat3')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span>${i18n.t('pricing.collector.feat4')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span>${i18n.t('pricing.collector.feat5')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span class="text-primary font-bold">${i18n.t('pricing.collector.feat6')}</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                      <span class="text-primary mt-1">✓</span>
+                      <span class="text-white">${i18n.t('pricing.collector.feat7')}</span>
+                    </li>
+                </ul>
+
+                <div class="w-full mt-auto">
+                  <div id="checkout-form">
+                    <!-- Email Input Field -->
+                    <div class="mb-4">
+                      <label for="email-input" class="block text-white font-mono text-sm font-bold uppercase tracking-wider mb-2">
+                        ${i18n.t('checkout.email_label')}
+                      </label>
+                      <input
+                        id="email-input"
+                        type="email"
+                        placeholder="${i18n.t('checkout.email_placeholder')}"
+                        class="w-full px-4 py-3 bg-[#1a1a1a] border-2 border-[#444] text-white font-mono text-sm placeholder:text-text-muted/50 focus:outline-none focus:border-primary transition-colors"
+                      />
+                      <div id="email-error" class="text-red-500 font-mono text-xs mt-1 hidden"></div>
+                    </div>
+
+                    <!-- PayPal Button Container -->
+                    <div class="relative">
+                      <div id="paypal-button-container" class="min-h-[55px]"></div>
+                      <div id="paypal-overlay" class="absolute inset-0 z-10 cursor-pointer"></div>
                     </div>
                   </div>
+
+                  <!-- Result Container (populated by checkout.js) -->
+                  <div id="checkout-result"></div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
               <!-- Background Elements -->
               <div class="absolute top-0 left-0 w-full h-full pointer-events-none opacity-5">
