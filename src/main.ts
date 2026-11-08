@@ -1,6 +1,6 @@
 import './style.css'
 import { 
-  Navigation, initNavigation, Hero, Download, Features, Showcase, Pricing, WaitlistModal, 
+  Navigation, initNavigation, Hero, initHero, Download, Features, Showcase, Pricing, WaitlistModal, 
   Footer, initLanguageSwitcher, initWaitlistModal 
 } from './components';
 import { initVersionDisplay } from './utils/version';
@@ -48,6 +48,7 @@ function renderApp(): void {
   
   // Initialize functionalities
   initNavigation(app);
+  initHero(app);
   initLanguageSwitcher(app);
   initWaitlistModal(app);
   

@@ -1,3 +1,4 @@
+import { Carousel, initCarousel } from 'pixelroot32-components-landing-page';
 import { i18n } from '../i18n';
 
 export function Hero(): string {
@@ -18,9 +19,21 @@ export function Hero(): string {
     <div class="relative max-w-5xl mx-auto">
       <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-retro opacity-20 blur-xl"></div>
       <div class="relative bg-surface border-4 border-black shadow-block-hover-lg">
-        <img src="./assets/tilemap/tilemap-editor.webp" alt="PixelRoot32 Tilemap Editor" class="h-auto pixel-art">
+        ${Carousel({
+          id: 'hero-carousel',
+          slides: [
+            { src: './assets/tilemap/tilemap-editor-orthogonal.webp', alt: i18n.t('hero.carousel.orthogonal') },
+            { src: './assets/tilemap/tilemap-editor-isometric.webp', alt: i18n.t('hero.carousel.isometric') }
+          ],
+          prevLabel: i18n.t('hero.carousel.prev'),
+          nextLabel: i18n.t('hero.carousel.next')
+        })}
       </div>
     </div>
   </div>
 </main>`;
+}
+
+export function initHero(container: HTMLElement): void {
+  initCarousel(container);
 }

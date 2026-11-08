@@ -52,7 +52,7 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 - **Tilemap Editor:** Native desktop application (Windows, macOS, Linux) - Module 01, available now
 - **Music Editor:** Upcoming module - NES-style dynamic audio synthesizer (Pulse with sweep, Triangle with sweep, Sine, Saw, Noise) for chiptune music
 - **Export:** Native C++ for ESP32 hardware, PROGMEM storage
-- **Persistence:** Binary v7 room format, 1 byte/tile
+- **Persistence:** Binary v9 project format, 1 byte/tile
 - **Licensing:** Perpetual (lifetime) license, one-time purchase; free to edit, exporting to ESP32 binary requires a license
 
 ---
@@ -65,10 +65,11 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 2. Multi-layer design with layer management (visibility toggle, locking, opacity)
 3. Intelligent tileset management: local asset import and advanced selection tools
 4. Multi-scene workflow with Onion Skinning to align transitions and view adjacent scenes as overlays
-5. Rooms & connections: room-by-room world design with a room model, validation rules, binary v7 persistence, and C++ export with room metadata; readable connection panel for room adjacency
-6. Tile animation system: tile-linked animations with ESP32-synchronized timing, live canvas preview, automatic C++ export with PROGMEM storage (up to 64 animations per scene)
-7. Hardware optimization: export settings fine-tuned to hardware constraints
-8. Global preferences: grid intensity controls, background colors, and performance-saving history compression
+5. Rooms & connections: room-by-room world design with a room model, validation rules, binary persistence, and C++ export with room metadata; readable connection panel for room adjacency
+6. Isometric scenes: per-scene orthogonal or isometric projection with configurable cell size and screen origin, depth-ordered painting of diamond and tall tiles, rooms on isometric maps, and C++ export of the projection plus per-room tables for the engine (PixelRoot32 engine 1.15.0+)
+7. Tile animation system: tile-linked animations with ESP32-synchronized timing, live canvas preview, automatic C++ export with PROGMEM storage (up to 64 animations per scene)
+8. Hardware optimization: export settings fine-tuned to hardware constraints
+9. Global preferences: grid intensity controls, background colors, and performance-saving history compression
 
 ### Music Editor (Module 02 - upcoming)
 
@@ -82,7 +83,7 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 
 ### Commercial Model
 
-1. Lifetime (perpetual) license with one-time payment; currently $14.99 USD (limited-time offer, regular $19.99)
+1. Lifetime (perpetual) license with one-time payment; currently $5.99 USD (limited-time offer, regular $10.99)
 2. Pre-ordering the Tilemap Editor reserves access to all future suite modules at no extra cost
 3. Tilemap Editor is free to use for editing; exporting to ESP32 binary requires a license
 4. The PixelRoot32 engine remains 100% free and open source (MIT) - these tools are optional paid power-ups
@@ -100,7 +101,7 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 - **Layer** - a render level in the map; the editor supports up to 8 layers
 - **Scene** - a single level/map within a project; the editor manages multiple scenes with Onion Skinning
 - **Onion Skinning** - overlay of adjacent scenes to align transitions between levels
-- **Room / RoomGraph** - room-by-room world model with connections between rooms (binary v7 persistence, C++ export with room metadata)
+- **Room / RoomGraph** - room-by-room world model with connections between rooms (binary persistence, C++ export with room metadata)
 - **PROGMEM** - flash storage used by the generated C++ output to save RAM on ESP32
 - **Chipmusic / chiptune** - retro-style music produced by the engine's NES-style audio synthesizer
 - **PayPal checkout** - the payment flow in the pricing section; a valid email is required to receive the license key
@@ -111,7 +112,7 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 
 ### Current Version
 
-- **Tool Suite:** v1.1.0
+- **Tool Suite:** v1.2.0
 - **Landing Page:** v1.0.0
 
 ### Landing Page
@@ -129,7 +130,7 @@ PixelRoot32 Tool Suite is the commercial production suite for the PixelRoot32 ec
 
 ### Important Notes
 
-- **DO NOT invent pricing** - the current lifetime license price is $14.99 USD (limited-time offer, regular $19.99); verify with the pricing section before stating
+- **DO NOT invent pricing** - the current lifetime license price is $5.99 USD (limited-time offer, regular $10.99); verify with the pricing section before stating
 - **DO NOT invent URLs** - use only those provided
 - The Tool Suite is a **paid commercial product**; do not present it as free or open source. The PixelRoot32 engine itself remains free/open source (MIT)
 - For technical support, direct to GitHub Issues
